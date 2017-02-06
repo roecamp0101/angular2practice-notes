@@ -1,0 +1,13 @@
+<p>
+  http works!
+</p>
+
+
+ <ul class="list-unstyled social-icons social-ul-list">
+      <li *ngFor="let item of items | slice:0:12; let i=index"> 
+               
+       <img src="{{ item.thumbnailUrl }}" width="42" height="36" class="img-rounded"/>
+            <span class="item-text">{{item.title}}</span>
+      </li>
+    </ul>
+    

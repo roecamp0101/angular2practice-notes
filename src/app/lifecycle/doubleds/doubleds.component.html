@@ -1,0 +1,46 @@
+<h2 [ngStyle]="{'color': 'blue'}">Wooooohh</h2>
+<p [ngClass]="['purple', 'sizing']">I go I go I go</p>
+<p [class.purple]="true">I go I go I go</p>
+
+
+
+
+<ul>
+    <li *ngFor="let sum of summize">{{sum}}</li>
+</ul>
+
+
+<br/><br/><br/>
+
+
+<ul>
+    <li *ngFor="let info of infos; let i = index">{{i}} - {{info.name}}</li> <!-- i is for index -->
+</ul>
+
+<br/><br/><br/>
+
+<p *ngIf="blanking">Some Information</p>
+
+<button class="btn" (click)="blanking = !blanking">Click to google</button>
+
+
+<br/><br/><br/>
+
+
+<p *ngIf="chillinz">We really coolin out</p>
+
+
+<button (click)="really()">Really click on</button>
+
+
+<br/><br/><br/>
+
+
+
+
+<div [ngSwitch]="100">
+  <p *ngSwitchCase="0">Whoooooo</p>
+  <p *ngSwitchCase="10">really though</p>
+  <p *ngSwitchCase="23">wooo yoooii</p>
+  <p *ngSwitchDefault>so thisis the default value</p>
+</div>

@@ -1,3 +1,100 @@
 <h1>
   {{title}}
 </h1>
+
+<br/><br/> <br/>
+<p>{{love}}</p>
+
+<br/><br/> <br/>
+<span>{{numberInterpulation}}</span>
+
+<br/><br/> <br/>
+<app-other></app-other>
+
+
+<br/><br/> <br/>
+<app-singer>
+   <p #yooz>yoooooooooooooo</p>
+</app-singer>
+
+
+<br/><br/> <br/>
+
+
+<input type="text" value="{{love}}" placeholder="{{title}}">
+<br/><br/><br/>
+
+<img [src]="imageLink" alt="{{love}}" width="50" height="50"/>
+
+<br/><br/> <br/>
+
+<p [ngClass]="{'beastmode': true}">hey singer how you doing singer</p>
+
+<p [ngClass]="'udo'">he say he wanna be attracted to</p>
+
+<p [ngStyle]="{'color': 'orange'}">Wooooooww</p>
+
+<br/><br/><br/>
+
+<input type="text" #info/> <button (click)="loginfo(info.value)" class="btn btn-success">logging service info</button>
+
+<br/><br/><br/>
+
+
+<app-lifecycle [bindable]="cool"></app-lifecycle>
+
+
+<br/><br/><br/>
+
+<hr/>
+    <ul class="list-inline">
+        <li> <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> </li>
+        <li><a [routerLink]="['user']" routerLinkActive="active"> User </a></li>
+        <li><a [routerLink]="['user', id]" [queryParams]="{'analytics': param}" [fragment]="'section3'" routerLinkActive="active">User Id</a></li>
+        <li><a [routerLink]="['user', section]" routerLinkActive="active">User Id Section</a></li>
+        <li><a [routerLink]="['contactus']" routerLinkActive="active">Contact Us</a></li>
+    </ul>
+
+<hr/>
+
+<!--to preserve Query params 
+[preserveQueryParams]="true"
+-->
+
+<!--to preserve Fragment params 
+[preserveFragment]="true"
+-->
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+<br/><br/><br/>
+
+<br/><br/><br/>
+<app-template></app-template>
+
+
+
+
+<br/><br/><br/>
+
+
+<app-pipes></app-pipes>
+
+
+
+
+<br/><br/><br/>
+
+
+<app-http></app-http>
+
+
+
+<br/><br/><br/>
+
+<app-animation></app-animation>

@@ -1,0 +1,30 @@
+<h1>{{valuez | uppercase}}</h1>
+
+<hr/>
+
+<h1>{{valuez | slice: 2:8 | uppercase}}</h1>
+
+<hr/>
+
+<p>{{days | date}}</p>
+
+<hr/>
+
+<p>{{days | date:'MM/dd/yy' }}</p>
+
+<hr>
+
+<h1>Custom Pipe</h1>
+
+
+<input type="text" #info (keyup)="0"> <span>{{info.value | doublePippey}}</span>
+
+<hr/>
+
+<h1>filtering pipe</h1>
+
+<ul>
+    <li *ngFor="let item of values | filtering: 'ea' ">
+        {{item}}
+    </li>
+</ul>

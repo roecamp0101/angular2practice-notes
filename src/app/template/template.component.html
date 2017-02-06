@@ -1,0 +1,47 @@
+<form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<div ngModelGroup="fullName">
+ <div class="form-group">
+    <label for="inputFirst3" class="col-md-1 control-label">First</label>
+    <div class="col-md-6">
+      <input type="text" class="form-control" id="inputFirst3" placeholder="First Name" ngModel name="firstname" required #first="ngModel">
+       <p *ngIf="first.invalid && first.touched" class="alert alert-danger">Please Enter Text</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputLast3" class="col-md-1 control-label">Last</label>
+    <div class="col-md-6">
+      <input type="text" class="form-control" id="inputLast3" placeholder="Last Name" ngModel name="lastname" required #last="ngModel">
+      <p *ngIf="last.invalid && last.touched" class="alert alert-danger">Please Enter Text</p>
+    </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-md-1 control-label">Email</label>
+    <div class="col-md-6">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" ngModel name="email" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" #email="ngModel">
+       <p *ngIf="email.invalid && email.touched" class="alert alert-danger">Invalid Email</p>
+    </div>
+   
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-md-1 control-label">Password</label>
+    <div class="col-md-6">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ngModel name="password" required #pass="ngModel">
+      <p *ngIf="pass.invalid && pass.touched" class="alert alert-danger">Please Enter Password</p>
+    </div>
+  </div>
+   <div *ngFor="let g of genders" class="radio col-md-2 col-md-offset-1">
+      <label><input type="radio" name="optradio" [value]="g" ngModel name="gender" #gender="ngModel">{{g}}</label>
+      <p *ngIf="gender.invalid && gender.untouched" class="alert alert-danger">Please Choose  Gender</p>
+    </div>
+  <div class="form-group">
+    <div class="col-md-6 pull-right clearfix">
+      <button type="submit" class="btn btn-default" [disabled]="!f.valid">Sign in</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+<!--forms (form tag) are automatically detected by angular. The only thing you have to do is tell angular what controllers(sections of the form) you want it to watch (you use ngModel to tell angular what section you want it to watch. and the name attribute). -->
