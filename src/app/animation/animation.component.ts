@@ -1,4 +1,4 @@
-import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 
 @Component({
     selector: 'app-animation',
@@ -34,7 +34,8 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
         backgroundColor: '#000080',
         transform: 'translateX(0) scale(0.5)'
       })),
-        transition('normal => highlighted', animate(100)),
+         
+        transition('normal => highlighted', animate(100)),//transition allows us to animate between states
         transition('highlighted => normal', animate(500)),
         /*transition('shrunken <=> *', animate(800, style({
             //borderRadius: '100px'
@@ -48,21 +49,60 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
                animate(1000, style({
                    borderRadius: '100px'
                })),
-             animate(500)
+             animate(500) //change styles between animations
          ])
     ]),
+        
+     trigger('keyanimations', [
+      state('normal', style({
+        backgroundColor: 'orange',
+        transform: 'translateX(0) scale(1)'
+      })),
+         
+        transition('void => *',  [
+            
+            animate(3000, keyframes([
+                
+                style({
+                    transform: 'translateX(110px)',
+                    backgroundColor: 'pink',
+                    offset: 0 //tell at which point animation should operate
+                }),
+                style({
+                    transform: 'translateX(50px)',
+                    backgroundColor: 'green',
+                    offset: 0.5
+                }),
+                style({
+                    transform: 'translateX(20px)',
+                    backgroundColor: 'black',
+                    offset: 0.8
+                }),
+                style({
+                    transform: 'translateX(0px)',
+                    backgroundColor: 'grey',
+                    offset: 1
+                })
+            ]))
+                                   
+                                ]),//keyframe animations
+
+    ])
         
   ]
 
 })
 export class AnimationComponent implements OnInit {
 
+    /*setting the state to normal*/
     state = 'normal';
     wildstame = 'normal';
     
+    
     onAnimate(){
-        
+        //allows us to transition between states
         this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
+        
         this.wildstame == 'normal' ? this.wildstame = 'highlighted' : this.wildstame = 'normal';
     }
     
