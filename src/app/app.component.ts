@@ -17,12 +17,20 @@ export class AppComponent {
     
      //value = '';
     
+    allowinfo = false;
+    
     //injected service
     constructor(private wecoolin: WecoolinmanService){
         
         wecoolin.writeLog('Im a service we got injected');
         
+        setTimeout(() =>{
+            this.allowinfo = true;
+        }, 2000)
+        
     }
+
+    
 
     //logging information on button click (service)
     loginfo(values){
